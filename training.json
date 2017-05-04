@@ -1,0 +1,395 @@
+{
+ "rasa_nlu_data": {
+    "common_examples": [ 
+  {
+  "text": "move up",
+  "intent": "moveElbow",
+  "entities": [
+    {
+      "start": 5,
+      "end": 7,
+      "value": "up",
+      "entity": "1direction"
+    }
+  ]
+  },
+  {
+  "text": "move down",
+  "intent": "moveElbow",
+  "entities": [
+    {
+      "start": 5,
+      "end": 9,
+      "value": "down",
+      "entity": "1direction"
+    }
+  ]
+  },
+  {
+  "text": "move elbow 20 degrees",
+  "intent": "moveElbow",
+  "entities": [
+    {
+      "start": 11,
+      "end": 13,
+      "value": "20",
+      "entity": "2angle"
+    }
+  ]
+  },
+  {
+  "text": "move elbow -20 degrees",
+  "intent": "moveElbow",
+  "entities": [
+    {
+      "start": 11,
+      "end": 14,
+      "value": "-20",
+      "entity": "2angle"
+    }
+  ]
+  },
+  {
+  "text": "move elbow 20 degrees up",
+  "intent": "moveElbow",
+  "entities": [
+    {
+      "start": 11,
+      "end": 13,
+      "value": "20",
+      "entity": "2angle"
+    },
+    {
+      "start": 22,
+      "end": 24,
+      "value": "up",
+      "entity": "1direction"
+    }
+  ]
+  },
+  {
+  "text": "move elbow 20 degrees down",
+  "intent": "moveElbow",
+  "entities": [
+    {
+      "start": 11,
+      "end": 14,
+      "value": "20",
+      "entity": "2angle"
+    },
+    {
+      "start": 22,
+      "end": 27,
+      "value": "down",
+      "entity": "1direction"
+    }
+  ]
+  },
+ {
+  "text": "move 20 degrees up",
+  "intent": "moveElbow",
+  "entities": [
+    {
+      "start": 5,
+      "end": 6,
+      "value": "20",
+      "entity": "2angle"
+    },
+    {
+      "start": 16,
+      "end": 18,
+      "value": "up",
+      "entity": "1direction"
+    }
+  ]
+},
+{
+  "text": "move 20 degrees down",
+  "intent": "moveElbow",
+  "entities": [
+    {
+      "start": 5,
+      "end": 7,
+      "value": "20",
+      "entity": "2angle"
+    },
+    {
+      "start":16,
+      "end":20,
+      "value": "down",
+      "entity": "1direction"
+    }
+  ]
+},
+{
+  "text": "move elbow 20 up",
+  "intent": "moveElbow",
+  "entities": [
+    {
+      "start": 11,
+      "end": 13,
+      "value": "20",
+      "entity": "2angle"
+    },
+    {
+      "start": 14,
+      "end": 16,
+      "value": "up",
+      "entity": "1direction"
+    }
+  ]
+},
+{
+  "text": "move elbow 20 down",
+  "intent": "moveElbow",
+  "entities": [
+    {
+      "start": 11,
+      "end": 13,
+      "value": "20",
+      "entity": "2angle"
+    },
+    {
+      "start": 14,
+      "end": 18,
+      "value": "down",
+      "entity": "1direction"
+    }
+  ]
+},
+
+{
+  "text": "move base right",
+  "intent": "move_base",
+  "entities": [
+    {
+      "start": 10,
+      "end": 15,
+      "value": "rigth",
+      "entity": "1direction"
+    }
+  ]
+},
+{
+  "text": "move elbow left",
+  "intent": "move_base",
+  "entities": [
+    {
+      "start": 11,
+      "end": 16,
+      "value": "left",
+      "entity": "1direction"
+    }
+  ]
+},
+
+{
+  "text": "move base 20 degrees",
+  "intent": "move_base",
+  "entities": [
+    {
+      "start": 10,
+      "end": 12,
+      "value": "20",
+      "entity": "2angle"
+    }
+  ]
+},
+
+{
+  "text": "move base -20 degrees",
+  "intent": "move_base",
+  "entities": [
+    {
+      "start": 10,
+      "end": 13,
+      "value": "-20",
+      "entity": "2angle"
+    }
+  ]
+},
+{
+  "text": "move base 20 degrees right",
+  "intent": "move_base",
+  "entities": [
+    {
+      "start": 10,
+      "end": 12,
+      "value": "20",
+      "entity": "2angle"
+    },
+    {
+      "start": 21,
+      "end": 26,
+      "value": "right",
+      "entity": "1direction"
+    }
+  ]
+},
+{
+  "text": "move base 20 degrees left",
+  "intent": "move_base",
+  "entities": [
+    {
+      "start": 10,
+      "end": 12,
+      "value": "20",
+      "entity": "2angle"
+    },
+    {
+      "start": 21,
+      "end": 25,
+      "value": "left",
+      "entity": "1direction"
+    }
+  ]
+},
+{
+  "text": "move 20 degrees right",
+  "intent": "move_base",
+  "entities": [
+    {
+      "start": 5,
+      "end": 7,
+      "value": "20",
+      "entity": "2angle"
+    },
+    {
+      "start": 16,
+      "end": 21,
+      "value": "right",
+      "entity": "1direction"
+    }
+  ]
+},
+{
+  "text": "move 20 degrees left",
+  "intent": "move_base",
+  "entities": [
+    {
+      "start": 5,
+      "end": 7,
+      "value": "20",
+      "entity": "2angle"
+    },
+    {
+      "start": 16,
+      "end": 20,
+      "value": "left",
+      "entity": "1direction"
+    }
+  ]
+},
+{
+  "text": "move 20 right",
+  "intent": "move_base",
+  "entities": [
+    {
+      "start": 5,
+      "end": 7,
+      "value": "20",
+      "entity": "2angle"
+    },
+    {
+      "start": 8,
+      "end": 13,
+      "value": "right",
+      "entity": "1direction"
+    }
+  ]
+},
+{
+  "text": "move 20 left",
+  "intent": "move_base",
+  "entities": [
+    {
+      "start": 5,
+      "end": 7,
+      "value": "20",
+      "entity": "2angle"
+    },
+    {
+      "start": 8,
+      "end": 12,
+      "value": "left",
+      "entity": "1direction"
+    }
+  ]
+},
+{
+  "text": "move right",
+  "intent": "move_base",
+  "entities": [
+    {
+      "start": 5,
+      "end": 10,
+      "value": "right",
+      "entity": "1direction"
+    }
+  ]
+},
+{
+  "text": "move left",
+  "intent": "move_base",
+  "entities": [
+    {
+      "start": 5,
+      "end": 9,
+      "value": "left",
+      "entity": "1direction"
+    }
+  ]
+},
+
+
+{
+  "text": "close hand",
+  "intent": "move_hand",
+  "entities": [
+    {
+      "start": 0,
+      "end": 5,
+      "value": "close",
+      "entity": "action"
+    }
+  ]
+},
+{
+  "text": "close",
+  "intent": "move_hand",
+  "entities": [
+    {
+      "start": 0,
+      "end": 5,
+      "value": "close",
+      "entity": "action"
+    }
+  ]
+},
+{
+  "text": "open hand",
+  "intent": "move_hand",
+  "entities": [
+    {
+      "start": 0,
+      "end": 4,
+      "value": "open",
+      "entity": "action"
+    }
+  ]
+},
+{
+  "text": "open",
+  "intent": "move_hand",
+  "entities": [
+    {
+      "start": 0,
+      "end": 4,
+      "value": "open",
+      "entity": "action"
+    }
+  ]
+}]
+}
+}
+

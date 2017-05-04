@@ -1,0 +1,71 @@
+#!/usr/bin/python
+import paho.mqtt.client as mqtt
+import urllib2
+import json
+import time
+import subprocess
+
+httpTrainRequest="http://localhost:5000/train"
+httpParseRequest="http://localhost:5000/parse?q="
+
+getTrainingFile="{command=\"getDefinition\"}"
+commandsTopic="thing_commands"
+responseTopic="thing_responses"
+thing2chatTopic="thing2chat"
+chat2ThingTopic="chat2thing"
+
+
+def on_connect(client, userdata, flags, rc):
+    print("Connected with result code "+str(rc))
+    client.subscribe(responseTopic)
+    client.subscribe(chat2ThingTopic)
+    client.publish(commandsTopic,getTrainingFile)
+    
+
+
+def on_message(client, userdata, msg):
+#    print(msg.topic+" "+str(msg.payload))
+    print("Message from "+msg.topic)
+
+    
+    if msg.topic == responseTopic:
+        print "response message"
+        data= json.loads(msg.payload)
+        if data.get('rasa_nlu_data'):
+            print("Training file")
+            req = urllib2.Request(httpTrainRequest, msg.payload, {'Content-Type': 'application/json'})
+            try:
+                connection=urllib2.urlopen(req)
+            except urllib2.HTTPError,e:
+                connection = e
+            if connection.code !=200:
+                print "error sending training file"
+            time.sleep(5)#TODO monitor rasa status
+            subprocess.Popen("./manage_container reload", shell=True)
+
+        if data.get('message'):
+            print("Message")
+            client.publish(thing2chatTopic,data[message])
+       
+    
+    if msg.topic == chat2ThingTopic:
+        # line to rasa
+        req = urllib2.Request(httpParseRequest+ msg.payload.replace(" ","%20"))
+        response = urllib2.urlopen(req)
+        #json.loads(jsonIntent) 
+        # entities -> parameters
+        client.publish(commandsTopic, response.read())
+
+    
+ 
+client = mqtt.Client()
+client.on_connect = on_connect
+client.on_message = on_message
+
+client.connect("localhost", 1883, 60)
+
+# Blocking call that processes network traffic, dispatches callbacks and
+# handles reconnecting.
+# Other loop*() functions are available that give a threaded interface and a
+# manual interface.
+client.loop_forever()

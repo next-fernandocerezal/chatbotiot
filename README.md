@@ -1,4 +1,4 @@
-# chatbotiot
+# Chatbot IoT
 Trying to talk with a robotic arm using rasa nlu as nlp engine
 
 This work uses rasa nlu version of repository https://github.com/beeva-fernandocerezal/rasa_nlu. This repository has an autodeploy version of rasa and has a manage_container script used by mqtt_connector.
